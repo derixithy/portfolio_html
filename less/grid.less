@@ -1,34 +1,48 @@
 #grid() {
-	display: flex;
-	flex-wrap: wrap;
-
-	&.stacked {
-		flex-direction: column;
-	}
-	&.center {
-		justify-content: center;
+	display: block;
+	
+	.row(@count: 1, @gap: 0) {
+		& + & when (@gap > 0) {
+			margin-top: @gap;
+		}
 	}
 
+	.column(@count: @grid-columnCount, @gap: @grid-gutterSize) {
+		display: inline-block;
+		vertical-align: top;
+
+		.colwidth(@count, @gap);
+
+		& + & when (@gap > 0) {
+			margin-left: @gap;
+		}
+	}
+
+	.colwidth(@count: @grid-columnCount, @gap: @grid-gutterSize, @span: 1) {
+		@colwidth: 100% / @count * @span;
+		@gapwidth: @gap * (@count - @span) / @count;
+
+		& when (@gap > 0) and not (ispercentage(@gap)) {
+			width: calc(~"@{colwidth} - @{gapwidth}");
+		}
+
+		& when (@gap > 0) and (ispercentage(@gap)) {
+			width: @colwidth - @gapwidth;
+		}
+		& when (@gap = 0) {
+			width: @colwidth;
+		}
+	}
+}
+
+.grid {
+	#grid();
+
+	.row {
+		#grid.row();
+	}
 
 	.column {
-		flex: 1;
-	}
-
-		.two .column {
-			width: 50%;
-		}
-		.three .column  {
-			width: 33%;
-		}
-		.four .column {
-			width: 25%;
-		}
-		.five .column {
-			width: 20%;
-		}
-
-
-	@media (max-width: @size-small) {
-		display: block;
+		#grid.column();
 	}
 }

@@ -12,8 +12,8 @@ color: #color[primary];
 @import 'settings';
 @import 'layout';
 @import 'navbar';
-@import 'grid';
-
+//@import 'grid';
+@import "flexiblegs-less.less";
 
 body {
 	background-color: #fefefe;
@@ -22,21 +22,20 @@ body {
 nav {
 	#nav();
 	ul {
-		#grid();
+		.wrap();
 
 		li {
-			#grid.column();
-			width: 33%;
+			.col(1,2);
 		}
 	}
 }
 
+
 .container, footer {
-	#grid();
+	.wrap();
 }
 
 main {
 	#layout.main();
 }
-article {
-}
+
