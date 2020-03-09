@@ -1,0 +1,34 @@
+#grid() {
+	display: flex;
+	flex-wrap: wrap;
+
+	&.stacked {
+		flex-direction: column;
+	}
+	&.center {
+		justify-content: center;
+	}
+
+
+	.column {
+		flex: 1;
+	}
+
+		.two .column {
+			width: 50%;
+		}
+		.three .column  {
+			width: 33%;
+		}
+		.four .column {
+			width: 25%;
+		}
+		.five .column {
+			width: 20%;
+		}
+
+
+	@media (max-width: @size-small) {
+		display: block;
+	}
+}

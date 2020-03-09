@@ -1,0 +1,42 @@
+@img: "../img";
+
+/* less: 3.5;
+#color() {
+	primary:#000000;
+}
+
+color: #color[primary];
+*/
+
+
+@import 'settings';
+@import 'layout';
+@import 'navbar';
+@import 'grid';
+
+
+body {
+	background-color: #fefefe;
+}
+
+nav {
+	#nav();
+	ul {
+		#grid();
+
+		li {
+			#grid.column();
+			width: 33%;
+		}
+	}
+}
+
+.container, footer {
+	#grid();
+}
+
+main {
+	#layout.main();
+}
+article {
+}

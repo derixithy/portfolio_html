@@ -1,0 +1,105 @@
+/* less: 3.5;
+#color() {
+	primary:#000000;
+}
+
+color: #color[primary];
+*/
+body {
+  background-color: #fefefe;
+}
+nav {
+  display: block;
+  width: 100%;
+}
+nav ul {
+  list-style-type: none;
+  position: relative;
+  padding: 0px;
+}
+nav ul li a {
+  display: block;
+  background-color: #e0e0e0;
+  color: #fefefe;
+  padding: 3px 6px;
+}
+nav ul li a:hover {
+  background-color: #fefefe;
+  color: #e0e0e0;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+nav ul.stacked {
+  flex-direction: column;
+}
+nav ul.center {
+  justify-content: center;
+}
+nav ul .column {
+  flex: 1;
+}
+nav ul .two .column {
+  width: 50%;
+}
+nav ul .three .column {
+  width: 33%;
+}
+nav ul .four .column {
+  width: 25%;
+}
+nav ul .five .column {
+  width: 20%;
+}
+@media (max-width: 480px) {
+  nav ul {
+    display: block;
+  }
+}
+nav ul li {
+  flex: 1;
+  width: 33%;
+}
+.container,
+footer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container.stacked,
+footer.stacked {
+  flex-direction: column;
+}
+.container.center,
+footer.center {
+  justify-content: center;
+}
+.container .column,
+footer .column {
+  flex: 1;
+}
+.container .two .column,
+footer .two .column {
+  width: 50%;
+}
+.container .three .column,
+footer .three .column {
+  width: 33%;
+}
+.container .four .column,
+footer .four .column {
+  width: 25%;
+}
+.container .five .column,
+footer .five .column {
+  width: 20%;
+}
+@media (max-width: 480px) {
+  .container,
+  footer {
+    display: block;
+  }
+}
+main {
+  padding: 2em;
+}
