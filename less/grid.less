@@ -1,46 +1,18 @@
 #grid() {
-	display: block;
-	
-	.row(@count: 1, @gap: 0) {
-		& + & when (@gap > 0) {
-			margin-top: @gap;
-		}
-	}
+	display: flex;
 
-	.column(@count: @grid-columnCount, @gap: @grid-gutterSize) {
-		display: inline-block;
-		vertical-align: top;
+	.column(@count: @grid-columnCount, @spacing: .3em) {
+		display: block;
+		margin: 0px;
+		padding: @spacing;
 
-		.colwidth(@count, @gap);
+		width: 100% / @count;
 
-		& + & when (@gap > 0) {
-			margin-left: @gap;
-		}
-	}
-
-	.colwidth(@count: @grid-columnCount, @gap: @grid-gutterSize, @span: 1) {
-		@colwidth: 100% / @count * @span;
-		@gapwidth: @gap * (@count - @span) / @count;
-
-		& when (@gap > 0) and not (ispercentage(@gap)) {
-			width: calc(~"@{colwidth} - @{gapwidth}");
-		}
-
-		& when (@gap > 0) and (ispercentage(@gap)) {
-			width: @colwidth - @gapwidth;
-		}
-		& when (@gap = 0) {
-			width: @colwidth;
-		}
 	}
 }
 
 .grid {
 	#grid();
-
-	.row {
-		#grid.row();
-	}
 
 	.column {
 		#grid.column();

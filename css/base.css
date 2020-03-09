@@ -5,7 +5,15 @@
 
 color: #color[primary];
 */
-/*! Flexible Grid System 5.6.0 | Less | MIT License | dnomak.com/flexiblegs */
+.grid {
+  display: flex;
+}
+.grid .column {
+  display: block;
+  margin: 0px;
+  padding: 0.3em;
+  width: 8.33333333%;
+}
 body {
   background-color: #fefefe;
 }
@@ -29,38 +37,63 @@ nav ul li a:hover {
   color: #e0e0e0;
 }
 nav ul {
-  display: block;
-  width: 100%;
-  font-size: 0;
-  letter-spacing: 0;
-  text-align: left;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-nav ul > * {
-  display: inline-block;
-  vertical-align: top;
+  display: flex;
 }
 nav ul li {
+  display: block;
+  margin: 0px;
+  padding: 0.3em;
   width: 50%;
 }
 .container,
 footer {
-  display: block;
-  width: 100%;
-  font-size: 0;
-  letter-spacing: 0;
-  text-align: left;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.container > *,
-footer > * {
-  display: inline-block;
-  vertical-align: top;
+  display: flex;
 }
 main {
   padding: 2em;
+}
+article {
+  display: block;
+  margin: 0px;
+  padding: 0.3em;
+  width: 33.33333333%;
+}
+footer {
+  margin-top: 2em;
+}
+footer p {
+  width: 100%;
+  text-align: center;
+}
+.post .card {
+  border: 1px solid #929292;
+  border-radius: 3px;
+}
+.post .card .poster {
+  width: 100%;
+  background-color: #020202;
+  height: 8em;
+}
+.post .card .title {
+  font-size: 2em;
+  text-align: center;
+}
+.post .tags {
+  list-style-type: none;
+  padding: 0px;
+  margin-top: 0px;
+}
+.post .tags li {
+  display: inline;
+  margin-right: 3px;
+}
+.post .tags li a {
+  text-decoration: none;
+  color: #929292;
+}
+.post .tags li a:hover {
+  text-decoration: underline;
+}
+.post .tags li:before {
+  content: "#";
 }
