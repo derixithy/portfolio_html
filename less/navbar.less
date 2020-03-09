@@ -1,24 +1,44 @@
-#nav() {
+#navbar() {
 	display: block;
 	width: 100%;
+	#flexbar();
+	& > * {
+		#flexbar.item();
+	}
 
-	ul {
-		list-style-type: none;
-		position: relative;
-		padding: 0px;
-		li {
+}
 
-			a {
-				display:block;
-				background-color: #e0e0e0;
-				color: #fefefe;
-				padding: 3px 6px;
+#flexbar() {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	background: #eee; /// Changeme!
+	padding: 20px;
+	margin: 0 0 20px 0;
+	> * {
+		margin: 0 10px;
+	}
+	
+	.item( @order: 0 ) {
+		order: @order;
+	}
+	
+	.right {
+		.item(5);
+	}
+	.left {
+		.item(-5);
+	}
 
-				&:hover {
-					background-color: #fefefe;
-					color: #e0e0e0;
-				}
-			}
+	.no-flexbox & { // Modernizr
+		display: table;
+		border-spacing: 15px;
+		padding: 0;
+
+		& > * {
+			display: table-cell;
+			verticle-align: middle;
+			whitespace: nowrap;
 		}
 	}
 }

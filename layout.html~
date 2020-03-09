@@ -8,20 +8,15 @@
 </head>
 <body>
 	<nav>
-		<div class="home">
-			<img src="" alt="Home" />
-		</div>
-		<div class="menu">
-			<a>Over mij</a>
-			<a>Portfolio</a>
-			<a>Hobby's</a>
-		</div>
-		<div class="search">
-			<a><img src="" alt="Search" /></a>
-		</div>
+		<ul class="left">
+			<li><img src="" alt="Home" /></li>
+		</ul>
+		<ul class="right">
+			<li><a><img src="" alt="Search" /></a></li>
+		</ul>
 	</nav>
 	<div class="cover">
-		<!--img src="https://via.placeholder.com/1024/300/0000FF/808080?Text=Header" alt="heading" /-->
+		<img src="https://via.placeholder.com/1024/300/0000FF/808080?Text=Header" alt="heading" />
 	</div>
 	<div class="heading">
 		<h1>Page Title</h1>

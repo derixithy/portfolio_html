@@ -1,4 +1,15 @@
-#grid() {
+#grid(@columngap: 0px, @rowgap: 0px) {
+	display: grid;
+	grid-column-gap: @columngap;
+	grid-row-gap: @rowgap;
+	
+	.column(@count: @grid-columnCount, @spacing: .3em) {}
+	
+	.size( @size: "large") {}
+}
+
+
+#flexgrid() {
 	display: flex;
 
 	.column(@count: @grid-columnCount, @spacing: .3em) {
@@ -9,12 +20,69 @@
 		width: 100% / @count;
 
 	}
+	
+	.size( @size: "large") {}
+
+	.no-flexbox & { // Modernizr
+		display: table;
+		border-spacing: 15px;
+		padding: 0;
+
+		& > * {
+			display: table-cell;
+			verticle-align: middle;
+			whitespace: nowrap;
+		}
+	}
+
 }
 
-.grid {
-	#grid();
+#sgrid(@max: 1140px, @min: 748px) {
+	width: 100%;
+	max-width: @max;
+	min-width: @min;
+	margin: 0;
+	overflow: hidden;
+	&:after {
+		content: "";
+		display:table;
+		clear:both;
+	}
 
-	.column {
-		#grid.column();
+	.column(@size: 11, @max: 12) {
+		& when(@size < @max) {
+			&-@{size}-@{max} {
+				float: left;
+				min-height: 1px;
+				padding-right: 20px;
+				width: 100% / @max * @size;
+				
+				&:last-child {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+
+	.columns(@size: 11, @max: 12) when (@size > 0) {
+		& when(@size < @max) {
+			.column(@size, @max);
+		}
+		
+		.columns(@size - 1, @max);
+	}
+
+	.offset(@size: 11, @max: 12) {
+		&-@{size} {
+			margin-left: 100% / @max * @size;
+		}
+	}
+
+	.offsets(@size: 11, @max: 12) when (@size > 0) {
+		&-@{size} {
+			.offset(@size, @max)
+		}
+
+		.offsets(@size - 1);
 	}
 }
