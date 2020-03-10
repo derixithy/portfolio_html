@@ -37,11 +37,11 @@
 
 }
 
-#sgrid(@max: 1140px, @min: 748px) {
+#sgrid(@max: @size-max, @min: @size-min) {
 	width: 100%;
 	max-width: @max;
 	min-width: @min;
-	margin: 0;
+	margin: 0 auto;
 	overflow: hidden;
 	&:after {
 		content: "";
@@ -54,7 +54,7 @@
 			&-@{size}-@{max} {
 				float: left;
 				min-height: 1px;
-				padding-right: 20px;
+				padding-right: @spacing-medium;
 				width: 100% / @max * @size;
 				
 				&:last-child {
