@@ -1,27 +1,72 @@
 #navbar() {
-	display: block;
-	width: 100%;
-	#flexbar();
-	& > * {
-		#flexbar.item();
-	}
-
-}
-
-#flexbar() {
 	display: flex;
 	align-items: center;
+
 	width: 100%;
+	max-width: @size-max;
 	padding: @spacing-medium;
-	margin: @spacing-small 0 @spacing-medium 0;
-	> * {
-		margin: 0 @spacing-medium;
-	}
+	margin: @spacing-small auto @spacing-medium auto;
 	
 	.item( @order: 0 ) {
 		order: @order;
 	}
-	
+
+	.grow() {
+		flex-grow: 1;
+	}
+
+	.mobile() {
+		& label.burgermenu {
+			display: inline-block;
+		}
+
+		.menu {
+			text-align: left;
+		}
+
+		ul.links {
+			display: none;
+			padding: 0;
+
+			li {
+				display: block;
+				padding: 0;
+				border-bottom: 1px solid @color-grey;
+
+				&:last-child {
+					border: none;
+				}
+			}
+		}
+
+		& input:checked ~ ul.links {
+			display:block;
+		}
+
+
+	}
+
+
+	& > * {
+		.item();
+		margin: 0 @spacing-medium;
+	}
+
+	ul {
+		list-style-type: none;
+		li {
+			display: inline-block;
+			a {
+				display: inline-block;
+				width: 100%;
+			}
+		}
+	}
+
+	label.burgermenu, #hamburger {
+		display: none;
+	}
+
 	.right {
 		.item(5);
 	}
@@ -40,6 +85,7 @@
 			whitespace: nowrap;
 		}
 	}
+
 }
 
 

@@ -1,43 +1,4 @@
-#grid(@columngap: 0px, @rowgap: 0px) {
-	display: grid;
-	grid-column-gap: @columngap;
-	grid-row-gap: @rowgap;
-	
-	.column(@count: @grid-columnCount, @spacing: .3em) {}
-	
-	.size( @size: "large") {}
-}
-
-
-#flexgrid() {
-	display: flex;
-
-	.column(@count: @grid-columnCount, @spacing: .3em) {
-		display: block;
-		margin: 0px;
-		padding: @spacing;
-
-		width: 100% / @count;
-
-	}
-	
-	.size( @size: "large") {}
-
-	.no-flexbox & { // Modernizr
-		display: table;
-		border-spacing: 15px;
-		padding: 0;
-
-		& > * {
-			display: table-cell;
-			verticle-align: middle;
-			whitespace: nowrap;
-		}
-	}
-
-}
-
-#sgrid(@max: @size-max, @min: @size-min) {
+#grid(@max: @size-max, @min: @size-min) {
 	width: 100%;
 	max-width: @max;
 	min-width: @min;
