@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Layout</title>
+	<base href="../" />
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/base.css" />
@@ -9,14 +10,16 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0=" crossorigin="anonymous"></script>
 </head>
 <body>
+
+
 	<nav>
 		<div class="home">
 			<a href="index.html"><i class="fas fa-home"></i></a>
 		</div>
 		<div class="menu">
 			<div class="links hide-on-mobile">
-				<a href="index.html" class="active">Over mij</a>
-				<a href="portfolio.html">Portfolio</a>
+				<a href="index.html">Over mij</a>
+				<a href="portfolio.html" class="active">Portfolio</a>
 				<a href="hobbys.html">Hobby's</a>
 				<a href="cv.html">CV</a>
 			</div>
@@ -25,39 +28,50 @@
 			<a href="#"><i class="fas fa-search"></i></a>
 		</div>
 	</nav>
-	<div class="cover large">
-		<img src="https://via.placeholder.com/1024/300/0000FF/808080?Text=Header" alt="heading">
-	</div>
-	<div class="heading">
-		<h1>Project #1</h1>
+
+
+	<div class="cover">
+		<img src="img/projecten.jpg" alt="heading">
 	</div>
 
-	<div class="grid">
-		<main class="column-4-6">
-			<article>
-				<h2>Title</h2>
-				<div class="content">
-					Lorem ipsum
-				</div>
-			</article>
-		</main>
-		<aside class="column-2-6">
-			<ul class="menu">
-				<li class="title">Technische info</li>
-				<li>PHP: 7</li>
-				<li>JavaScript</li>
-				<li>CSS: Custom</li>
-      			<li class="separator"></li>
-      			<li class="title">Voortgang</li>
-				<li class="box true">CSS</li>
-  				<li class="box false">JavaScript</li>
-				<li class="box">PHP</li>
-				<li class="box">Inhoud</li>
-			</ul>
-		</aside>
+
+	<div class="container">
+
+		<div class="heading">
+			<h1>Portfolio</h1>
+		</div>
+
+		<div class="grid">
+			<main class="column-4-6">
+				<article>
+					<h2>Title</h2>
+					<div class="content">
+						Lorem ipsum
+					</div>
+				</article>
+			</main>
+			<aside class="column-2-6">
+				<ul class="menu">
+					<li class="title">Technische info</li>
+					<li>PHP: 7</li>
+					<li>JavaScript</li>
+					<li>CSS: Custom</li>
+		  			<li class="separator"></li>
+		  			<li class="title">Voortgang</li>
+					<li class="box true">CSS</li>
+	  				<li class="box false">JavaScript</li>
+					<li class="box">PHP</li>
+					<li class="box">Inhoud</li>
+				</ul>
+			</aside>
+		</div>
+
+
+		<footer>
+			<div class="container">
+				<p>&copy; Copyright 2020 - Eddie Gjaltema</p>
+			</div>
+		</footer>
 	</div>
-	<footer>
-		<p>&copy; Copyright 2020 - Eddie Gjaltema</p>
-	</footer>
 </body>
 </html>

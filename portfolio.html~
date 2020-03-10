@@ -44,14 +44,14 @@
 		<main class="grid">
 
 			<article class="column-6-12 mobile-column-3-6">
-				<a href="projects/portfolio.html" class="muted">
+				<a href="project1.html" class="muted">
 					<div class="post">
 						<div class="card hover">
 							<div class="poster">
 								<img src="https://via.placeholder.com/225x140/1985a1/e8eddf?Text=Project 1" />
 							</div>
 							<div class="title">
-								<span>Portfolio</span>
+								<span>Title</span>
 							</div>
 						</div>
 						<ul class="tags">

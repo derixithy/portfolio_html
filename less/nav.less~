@@ -54,7 +54,6 @@
 
 	ul {
 		list-style-type: none;
-		margin: 0;
 		li {
 			display: inline-block;
 			a {
@@ -94,39 +93,9 @@
 	list-style-type: none;
 	padding: @spacing-small;
 
-	li {
-		&:not(.title):not(.separator):before {
-			content: "» ";
-			color: brighten(@color-grey, 10%);
-		}
-
-		&.title {
-			font-weight: bold;
-			//border-bottom: 1px solid @color-grey;
-			margin-bottom: @spacing-small;
-		}
-
-		&.separator {
-			border-bottom: 1px solid @color-grey;
-			margin: @spacing-medium;
-		}
-		
-		&.canceled:before {
-			content: "× " !important;
-		}
-		
-		&.box:before {
-			content: "☐ " !important;
-		}
-		
-		&.box.true:before {
-			content: "☑ " !important;
-		}
-		
-		&.box.false:before {
-			content: "☒ " !important;
-		}
-
+	.title {
+		font-weight: bold;
+		//border-bottom: 1px solid @color-grey;
+		margin-bottom: @spacing-small;
 	}
-	
 }

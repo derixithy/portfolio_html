@@ -199,6 +199,7 @@ nav > * {
 }
 nav ul {
   list-style-type: none;
+  margin: 0;
 }
 nav ul li {
   display: inline-block;
@@ -235,13 +236,10 @@ nav .menu {
   text-align: center;
 }
 nav .menu a {
-  padding: 0.6em;
+  padding: 0 0.6em;
 }
 nav .links .active {
   font-weight: bold;
-}
-nav .links .active:hover {
-  color: #1985a1;
 }
 .cover {
   max-height: 300px;
@@ -475,9 +473,29 @@ ul.menu {
   list-style-type: none;
   padding: 0.3em;
 }
-ul.menu .title {
+ul.menu li:not(.title):not(.separator):before {
+  content: "» ";
+  color: brighten(#cfdbd5, 10%);
+}
+ul.menu li.title {
   font-weight: bold;
   margin-bottom: 0.3em;
+}
+ul.menu li.separator {
+  border-bottom: 1px solid #cfdbd5;
+  margin: 0.6em;
+}
+ul.menu li.canceled:before {
+  content: "× " !important;
+}
+ul.menu li.box:before {
+  content: "☐ " !important;
+}
+ul.menu li.box.true:before {
+  content: "☑ " !important;
+}
+ul.menu li.box.false:before {
+  content: "☒ " !important;
 }
 footer {
   margin-top: 2em;
