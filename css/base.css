@@ -527,7 +527,7 @@ footer p {
   }
   nav ul.links li {
     display: block;
-    padding: 0;
+    padding: 0.3em;
     border-bottom: 1px solid #cfdbd5;
   }
   nav ul.links li:last-child {
