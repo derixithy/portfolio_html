@@ -30,10 +30,13 @@ body {
 	color: @color-dark;
 }
 
-.muted {
-	&, &:hover, &:active, &:visited, &:link {
+.muted, nav a {
+	&, &:active, &:visited, &:link {
 		color: @color-dark;
 		text-decoration: none;
+		&:hover {
+			color: lighten(@color-dark, 5%);
+		}
 	}
 }
 
@@ -43,16 +46,19 @@ nav {
 
 	a {
 		&:extend(.muted);
-
-		&:hover {
-			text-decoration: underline;
-		}
 	}
 
 	.menu {
 		#navbar.grow();
 		text-align: center;
-		a { padding: 0 @spacing-medium; }
+		a {
+			padding: 0 @spacing-medium;
+			border-bottom: 1px solid @color-background;
+
+			&:hover {
+				border-bottom-color: @color-dark;
+			}
+		}
 	}
 
 	.links .active {

@@ -177,13 +177,26 @@ body {
   color: #242423;
 }
 .muted,
-.muted:hover,
+nav a,
 .muted:active,
+nav a:active,
 .muted:visited,
+nav a:visited,
 .muted:link,
+nav a:link,
 nav a {
   color: #242423;
   text-decoration: none;
+}
+.muted:hover,
+nav a:hover,
+.muted:active:hover,
+nav a:active:hover,
+.muted:visited:hover,
+nav a:visited:hover,
+.muted:link:hover,
+nav a:link:hover {
+  color: #313130;
 }
 nav {
   display: flex;
@@ -228,15 +241,16 @@ nav .left {
   verticle-align: middle;
   whitespace: nowrap;
 }
-nav a:hover {
-  text-decoration: underline;
-}
 nav .menu {
   flex-grow: 1;
   text-align: center;
 }
 nav .menu a {
   padding: 0 0.6em;
+  border-bottom: 1px solid #f8f8f8;
+}
+nav .menu a:hover {
+  border-bottom-color: #242423;
 }
 nav .links .active {
   font-weight: bold;
